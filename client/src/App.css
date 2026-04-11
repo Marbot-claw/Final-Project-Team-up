@@ -12,3 +12,109 @@
 /* .option__videocall-group {
     display: none;
 } */
+
+/* ========== POST CARD ANIMATIONS ========== */
+.post-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ========== BUTTON ANIMATIONS ========== */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-animated::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-animated:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-animated:active {
+  transform: scale(0.95);
+}
+
+/* ========== INPUT ANIMATIONS ========== */
+.input-animated {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-animated:focus {
+  border-color: #D7385E;
+  box-shadow: 0 0 0 3px rgba(215, 56, 94, 0.2);
+}
+
+/* ========== LOADING SPINNER ========== */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(215, 56, 94, 0.2);
+  border-top-color: #D7385E;
+  border-radius: 50%;
+  animation: spin-slow 0.8s linear infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========== CARD ENTRANCE ========== */
+.card-entrance {
+  animation: fade-in-up 0.5s ease-out both;
+}
+
+/* ========== NAVBAR GLASS ========== */
+.navbar-glass {
+  background: rgba(17, 16, 29, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ========== GAMES CARD CROSSFADE ========== */
+.games-card-img {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.games-card-overlay {
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #11101d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D7385E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e84a6f;
+}
