@@ -6,14 +6,19 @@ const gamesRoute = require("./gamesRoute");
 const userGamesRoute = require("./userGamesRoute");
 const errorHandler = require("../middlewares/errorHandler");
 
-router.get("/", async (req,res) =>{
-    res.send({msg: "Hello world"})
-})
+router.get("/", async (req, res) => {
+  res.status(200).json({
+    status: "success",
+    message: "TeamUp API is live",
+    timestamp: new Date().toISOString()
+  });
+});
+
 router.use("/games", gamesRoute);
 router.use("/users", usersRoute);
 router.use(loginAuth);
 router.use("/usergames", userGamesRoute);
 
-router.use(errorHandler)
+router.use(errorHandler);
 
 module.exports = router;
