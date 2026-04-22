@@ -4,7 +4,6 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
 const router = require("./routes/index");
 const cors = require("cors");
 
@@ -24,11 +23,6 @@ app.use((err, req, res, next) => {
   res.status(statusCode).json({
     error: message,
   });
-});
-
-// Start server
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
 });
 
 module.exports = app;
